@@ -1,0 +1,43 @@
+﻿@model List<PruebasHbeds.Models.ViewModels.HotelViewModel>
+@{
+    ViewBag.Title = "HotelList";
+}
+
+<h2>HotelList</h2>
+<table class="table table-bordered text-justify">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Web
+            </th>
+            <th>
+                Details
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var hotel in Model)
+        {
+        <tr>
+            <td>
+                @hotel.Name
+            </td>
+            <td>
+                @hotel.Description
+            </td>
+            <td>
+                @hotel.Web
+            </td>
+            <td>
+                <a href="@Url.Action("Hotel", "Home", new { @hotel.Code })">Mas detalles</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
